@@ -3,55 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Macro Investing - Class Performance</title>
+    <title>Global Macro Investing | Final Class Performance</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
-        h1 { text-align: center; color: #2c3e50; margin-bottom: 5px; font-size: 2.5em; }
-        p.subtitle { text-align: center; font-size: 1.2em; color: #7f8c8d; margin-bottom: 40px; }
-        h2 { color: #34495e; border-bottom: 2px solid #bdc3c7; padding-bottom: 5px; margin-top: 50px; }
-        .container { max-width: 1300px; margin: 0 auto; background: #fff; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; }
-        .img-container { text-align: center; margin: 30px 0; }
-        img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
-        .footer { text-align: center; margin-top: 60px; font-size: 0.9em; color: #7f8c8d; border-top: 1px solid #eee; padding-top: 20px;}
+        :root {
+            --primary-bg: #f8f9fa;
+            --container-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --accent: #3498db;
+            --border: #e9ecef;
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--primary-bg); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 40px 20px; 
+        }
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            background: var(--container-bg); 
+            padding: 50px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            border-radius: 12px; 
+        }
+        h1 { text-align: center; color: var(--text-main); font-size: 2.8em; margin-bottom: 10px; letter-spacing: -0.5px;}
+        p.subtitle { text-align: center; font-size: 1.25em; color: var(--text-muted); margin-bottom: 50px; font-weight: 300;}
+        .section-header {
+            margin-top: 70px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .section-header h2 { 
+            color: var(--text-main); 
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .section-header p {
+            margin: 8px 0 0 0;
+            color: var(--text-muted);
+            font-size: 1.1em;
+        }
+        .img-container { 
+            text-align: center; 
+            margin: 20px 0; 
+            background: var(--primary-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 6px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+        }
+        .footer { 
+            text-align: center; 
+            margin-top: 80px; 
+            font-size: 0.95em; 
+            color: var(--text-muted); 
+            border-top: 1px solid var(--border); 
+            padding-top: 30px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Global Macro Investing</h1>
-        <p class="subtitle">Trade Simulation Performance Dashboard | MBA & EMBA Sections</p>
+        <h1>Global Macro Investing: Fall 2025</h1>
+        <p class="subtitle">Semester Trade Simulation Dashboard | MBA & EMBA Sections</p>
 
-        <h2>1. Leaderboards: Top 5 Teams & Trades</h2>
+        <div class="section-header">
+            <h2>1. Aggregate Performance vs. Global Market Portfolio</h2>
+            <p>Comparing the class average returns against a custom, 21-factor Global Market Portfolio benchmark.</p>
+        </div>
+        <div class="img-container">
+            <img src="benchmark_comparison.png" alt="Class vs Benchmark">
+        </div>
+
+        <div class="section-header">
+            <h2>2. Factor Attribution (Multiple Regression)</h2>
+            <p>Analyzing the underlying macro drivers of the class portfolios using OLS regression against the GMP factors.</p>
+        </div>
+        <div class="img-container">
+            <img src="factor_attribution.png" alt="Factor Attribution Betas">
+        </div>
+
+        <div class="section-header">
+            <h2>3. Leaderboards: Top 5 Teams & Trades</h2>
+            <p>The highest performing individual macro trades and aggregate team portfolios by absolute P&L.</p>
+        </div>
         <div class="img-container">
             <img src="top_5_leaderboards.png" alt="Top 5 Leaderboards Dashboard">
         </div>
 
-        <h2>2. Aggregate Section Performance</h2>
-        <div class="img-container">
-            <img src="section_performance.png" alt="Aggregate Section Performance">
+        <div class="section-header">
+            <h2>4. Class Distribution & Risk Metrics</h2>
+            <p>Visualizing the spread of returns, stop-loss efficacy, and Sharpe ratios across all submitted trades.</p>
         </div>
-
-        <h2>3. Overall Class Distribution & Risk Metrics</h2>
         <div class="img-container">
             <img src="class_performance_dashboard.png" alt="Class Returns & Risk/Reward Dashboard">
         </div>
 
-        <h2>4. Team Portfolios by Section</h2>
+        <div class="section-header">
+            <h2>5. Intra-Class Correlation Matrix</h2>
+            <p>Identifying "crowded trades" and clustering behavior among independent student teams.</p>
+        </div>
+        <div class="img-container">
+            <img src="correlation_heatmap.png" alt="Correlation Matrix">
+        </div>
+
+        <div class="section-header">
+            <h2>6. Aggregate Team Portfolios by Section</h2>
+            <p>Tracking the daily cumulative returns of each team's equally-weighted macro portfolio.</p>
+        </div>
         <div class="img-container">
             <img src="team_portfolios_by_section.png" alt="Team Portfolios Performance">
         </div>
 
-        <h2>5. MBA Section: Individual Team Performance Grids</h2>
+        <div class="section-header">
+            <h2>7. MBA Section: Individual Trade Breakdowns</h2>
+            <p>Decomposing each MBA team's aggregate portfolio into its individual trade components.</p>
+        </div>
         <div class="img-container">
             <img src="mba_teams_individual_trades.png" alt="MBA Individual Trades">
         </div>
 
-        <h2>6. EMBA Section: Individual Team Performance Grids</h2>
+        <div class="section-header">
+            <h2>8. EMBA Section: Individual Trade Breakdowns</h2>
+            <p>Decomposing each EMBA team's aggregate portfolio into its individual trade components.</p>
+        </div>
         <div class="img-container">
             <img src="emba_teams_individual_trades.png" alt="EMBA Individual Trades">
         </div>
 
         <div class="footer">
-            <p>Generated via Python Data Pipeline utilizing the Bloomberg API.</p>
+            <p>Generated via Python Quantitative Pipeline utilizing the Bloomberg API (xbbg & blpapi).</p>
         </div>
     </div>
 </body>
