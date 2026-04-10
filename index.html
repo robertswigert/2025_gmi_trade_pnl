@@ -5,142 +5,533 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Macro Investing | Final Class Performance</title>
     <style>
-        :root {
-            --primary-bg: #f8f9fa;
-            --container-bg: #ffffff;
-            --text-main: #2c3e50;
-            --text-muted: #7f8c8d;
-            --accent: #3498db;
-            --border: #e9ecef;
-        }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: var(--primary-bg); 
-            color: var(--text-main); 
-            margin: 0; 
-            padding: 40px 20px; 
-        }
-        .container { 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            background: var(--container-bg); 
-            padding: 50px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-            border-radius: 12px; 
-        }
-        h1 { text-align: center; color: var(--text-main); font-size: 2.8em; margin-bottom: 10px; letter-spacing: -0.5px;}
-        p.subtitle { text-align: center; font-size: 1.25em; color: var(--text-muted); margin-bottom: 50px; font-weight: 300;}
-        .section-header {
-            margin-top: 70px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--border);
-        }
-        .section-header h2 { 
-            color: var(--text-main); 
-            margin: 0;
-            font-size: 1.8em;
-        }
-        .section-header p {
-            margin: 8px 0 0 0;
-            color: var(--text-muted);
-            font-size: 1.1em;
-        }
-        .img-container { 
-            text-align: center; 
-            margin: 20px 0; 
-            background: var(--primary-bg);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-        img { 
-            max-width: 100%; 
-            height: auto; 
-            border-radius: 6px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-        }
-        .footer { 
-            text-align: center; 
-            margin-top: 80px; 
-            font-size: 0.95em; 
-            color: var(--text-muted); 
-            border-top: 1px solid var(--border); 
-            padding-top: 30px;
-        }
+        :root { --primary-bg: #f8f9fa; --container-bg: #ffffff; --text-main: #2c3e50; --border: #e9ecef; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--primary-bg); color: var(--text-main); padding: 40px 20px; margin: 0; }
+        .container { max-width: 1400px; margin: 0 auto; background: var(--container-bg); padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        h1 { text-align: center; font-size: 2.8em; margin-bottom: 10px; }
+        p.subtitle { text-align: center; font-size: 1.2em; color: #7f8c8d; margin-bottom: 40px; }
+        .section-header { margin-top: 60px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+        .img-container { text-align: center; margin: 20px 0; padding: 20px; background: var(--primary-bg); border-radius: 8px; border: 1px solid var(--border); }
+        img { max-width: 100%; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        
+        /* CSS for the League Tables */
+        .styled-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95em; box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); }
+        .styled-table thead tr { background-color: #2c3e50; color: #ffffff; text-align: left; }
+        .styled-table th, .styled-table td { padding: 12px 15px; border-bottom: 1px solid #dddddd; text-align: center;}
+        .styled-table th:nth-child(2), .styled-table td:nth-child(2) { text-align: left; font-weight: bold; }
+        .styled-table tbody tr:nth-of-type(even) { background-color: #f3f3f3; }
+        .styled-table tbody tr:last-of-type { border-bottom: 2px solid #2c3e50; }
+        .styled-table tbody tr.active-row { font-weight: bold; color: #2c3e50; }
+        .table-title { text-align: center; font-size: 1.5em; margin-top: 40px; color: #34495e; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Global Macro Investing: Spring 2026</h1>
-        <p class="subtitle">Semester Trade Simulation Dashboard | MBA & EMBA Sections</p>
+        <p class="subtitle">Semester Trade Simulation Dashboard | Final Update: April 10, 2026</p>
 
         <div class="section-header">
             <h2>1. Aggregate Performance vs. Global Market Portfolio</h2>
-            <p>Comparing the class average returns against a custom, 21-factor Global Market Portfolio benchmark.</p>
         </div>
-        <div class="img-container">
-            <img src="benchmark_comparison.png" alt="Class vs Benchmark">
-        </div>
+        <div class="img-container"><img src="benchmark_comparison.png" alt="Benchmark Comparison"></div>
 
         <div class="section-header">
-            <h2>2. Factor Attribution (Multiple Regression)</h2>
-            <p>Analyzing the underlying macro drivers of the class portfolios using OLS regression against the GMP factors.</p>
+            <h2>2. MBA Section League Table</h2>
         </div>
-        <div class="img-container">
-            <img src="factor_attribution.png" alt="Factor Attribution Betas">
-        </div>
+        <table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Team</th>
+      <th>Net Portfolio P&amp;L (%)</th>
+      <th>Ann. Volatility (%)</th>
+      <th>Max Drawdown (%)</th>
+      <th>Sharpe Ratio</th>
+      <th>Info Ratio</th>
+      <th>Win Rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>MBA Delta</td>
+      <td>74.55</td>
+      <td>77.47</td>
+      <td>-47.89</td>
+      <td>1.38</td>
+      <td>1.38</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>MBA-Gamma</td>
+      <td>29.54</td>
+      <td>34.38</td>
+      <td>-15.45</td>
+      <td>1.22</td>
+      <td>1.09</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>MBA Kilo</td>
+      <td>25.41</td>
+      <td>16.50</td>
+      <td>-8.77</td>
+      <td>2.01</td>
+      <td>2.00</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>MBA Papa</td>
+      <td>21.10</td>
+      <td>19.38</td>
+      <td>-9.12</td>
+      <td>1.48</td>
+      <td>1.71</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>MBA Foxtrot</td>
+      <td>15.84</td>
+      <td>12.78</td>
+      <td>-5.10</td>
+      <td>1.68</td>
+      <td>1.77</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>MBA Juliett</td>
+      <td>10.65</td>
+      <td>15.53</td>
+      <td>-9.90</td>
+      <td>0.99</td>
+      <td>0.90</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>MBA Uniform</td>
+      <td>7.75</td>
+      <td>10.14</td>
+      <td>-4.89</td>
+      <td>1.08</td>
+      <td>1.23</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>MBA Yankee</td>
+      <td>5.86</td>
+      <td>8.79</td>
+      <td>-4.80</td>
+      <td>0.95</td>
+      <td>0.81</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>MBA Bravo</td>
+      <td>5.56</td>
+      <td>13.44</td>
+      <td>-7.21</td>
+      <td>0.63</td>
+      <td>0.63</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>MBA Tango</td>
+      <td>4.91</td>
+      <td>9.91</td>
+      <td>-8.34</td>
+      <td>0.73</td>
+      <td>0.57</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>MBA-Kappa</td>
+      <td>4.87</td>
+      <td>10.25</td>
+      <td>-5.15</td>
+      <td>0.70</td>
+      <td>0.86</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>MBA Romeo</td>
+      <td>3.89</td>
+      <td>5.19</td>
+      <td>-1.77</td>
+      <td>1.06</td>
+      <td>0.72</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>MBA-Epsilon</td>
+      <td>3.44</td>
+      <td>11.97</td>
+      <td>-6.29</td>
+      <td>0.46</td>
+      <td>0.59</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>MBA Mike</td>
+      <td>2.84</td>
+      <td>2.83</td>
+      <td>-1.58</td>
+      <td>1.40</td>
+      <td>0.51</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>MBA Whiskey</td>
+      <td>2.22</td>
+      <td>3.24</td>
+      <td>-2.15</td>
+      <td>0.96</td>
+      <td>0.35</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>MBA Zulu</td>
+      <td>1.39</td>
+      <td>4.38</td>
+      <td>-2.73</td>
+      <td>0.46</td>
+      <td>0.17</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>MBA Sierra</td>
+      <td>1.30</td>
+      <td>4.28</td>
+      <td>-2.74</td>
+      <td>0.45</td>
+      <td>0.22</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>MBA Oscar</td>
+      <td>1.24</td>
+      <td>4.69</td>
+      <td>-2.26</td>
+      <td>0.39</td>
+      <td>0.18</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>MBA India</td>
+      <td>1.23</td>
+      <td>4.93</td>
+      <td>-4.10</td>
+      <td>0.37</td>
+      <td>0.11</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>MBA Echo</td>
+      <td>0.77</td>
+      <td>5.29</td>
+      <td>-2.65</td>
+      <td>0.23</td>
+      <td>0.07</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>MBA Lima</td>
+      <td>0.35</td>
+      <td>4.94</td>
+      <td>-3.46</td>
+      <td>0.12</td>
+      <td>-0.03</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>MBA Xray</td>
+      <td>0.30</td>
+      <td>7.50</td>
+      <td>-5.82</td>
+      <td>0.09</td>
+      <td>-0.01</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>MBA Golf</td>
+      <td>-0.26</td>
+      <td>1.33</td>
+      <td>-0.89</td>
+      <td>-0.27</td>
+      <td>-0.20</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>MBA-Beta</td>
+      <td>-0.34</td>
+      <td>8.83</td>
+      <td>-5.07</td>
+      <td>-0.01</td>
+      <td>-0.15</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>MBA-Theta</td>
+      <td>-1.08</td>
+      <td>1.22</td>
+      <td>-1.38</td>
+      <td>-1.24</td>
+      <td>-0.43</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>MBA Quebec</td>
+      <td>-1.78</td>
+      <td>2.47</td>
+      <td>-2.97</td>
+      <td>-1.01</td>
+      <td>-0.55</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>MBA Charlie</td>
+      <td>-3.71</td>
+      <td>19.02</td>
+      <td>-15.60</td>
+      <td>-0.18</td>
+      <td>-0.20</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>MBA November</td>
+      <td>-4.56</td>
+      <td>3.65</td>
+      <td>-4.70</td>
+      <td>-1.77</td>
+      <td>-1.13</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>MBA Alfa</td>
+      <td>-6.10</td>
+      <td>12.25</td>
+      <td>-10.19</td>
+      <td>-0.66</td>
+      <td>-0.82</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>MBA Hotel</td>
+      <td>-17.93</td>
+      <td>4.63</td>
+      <td>-18.19</td>
+      <td>-5.95</td>
+      <td>-3.85</td>
+      <td>25.0</td>
+    </tr>
+  </tbody>
+</table>
 
         <div class="section-header">
-            <h2>3. Leaderboards: Top 5 Teams & Trades</h2>
-            <p>The highest performing individual macro trades and aggregate team portfolios by absolute P&L.</p>
+            <h2>3. EMBA Section League Table</h2>
         </div>
-        <div class="img-container">
-            <img src="top_5_leaderboards.png" alt="Top 5 Leaderboards Dashboard">
-        </div>
+        <table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Team</th>
+      <th>Net Portfolio P&amp;L (%)</th>
+      <th>Ann. Volatility (%)</th>
+      <th>Max Drawdown (%)</th>
+      <th>Sharpe Ratio</th>
+      <th>Info Ratio</th>
+      <th>Win Rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>EMBA Kilo</td>
+      <td>45.88</td>
+      <td>22.89</td>
+      <td>-8.04</td>
+      <td>2.42</td>
+      <td>2.47</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>EMBA Delta</td>
+      <td>21.96</td>
+      <td>9.58</td>
+      <td>-4.72</td>
+      <td>2.95</td>
+      <td>2.98</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>EMBA India</td>
+      <td>9.06</td>
+      <td>5.71</td>
+      <td>-2.11</td>
+      <td>2.15</td>
+      <td>1.36</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>EMBA Charlie</td>
+      <td>7.01</td>
+      <td>5.16</td>
+      <td>-2.23</td>
+      <td>1.86</td>
+      <td>1.21</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>EMBA Alfa</td>
+      <td>4.96</td>
+      <td>3.10</td>
+      <td>-0.45</td>
+      <td>2.20</td>
+      <td>0.90</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>EMBA Foxtrot</td>
+      <td>3.69</td>
+      <td>5.69</td>
+      <td>-3.29</td>
+      <td>0.92</td>
+      <td>0.51</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>EMBA Echo</td>
+      <td>2.91</td>
+      <td>3.97</td>
+      <td>-1.87</td>
+      <td>1.03</td>
+      <td>0.50</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>EMBA Juliett</td>
+      <td>2.62</td>
+      <td>5.93</td>
+      <td>-3.53</td>
+      <td>0.64</td>
+      <td>0.38</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>EMBA November</td>
+      <td>1.02</td>
+      <td>1.28</td>
+      <td>-0.97</td>
+      <td>1.12</td>
+      <td>0.12</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>EMBA Golf</td>
+      <td>0.32</td>
+      <td>1.69</td>
+      <td>-1.28</td>
+      <td>0.27</td>
+      <td>-0.05</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>EMBA Oscar</td>
+      <td>0.29</td>
+      <td>1.20</td>
+      <td>-1.37</td>
+      <td>0.34</td>
+      <td>-0.06</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>EMBA Lima</td>
+      <td>0.08</td>
+      <td>4.73</td>
+      <td>-3.75</td>
+      <td>0.05</td>
+      <td>-0.06</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>EMBA Bravo</td>
+      <td>-0.33</td>
+      <td>1.63</td>
+      <td>-1.70</td>
+      <td>-0.28</td>
+      <td>-0.24</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>EMBA Hotel</td>
+      <td>-1.15</td>
+      <td>1.83</td>
+      <td>-2.14</td>
+      <td>-0.88</td>
+      <td>-0.37</td>
+      <td>17.0</td>
+    </tr>
+  </tbody>
+</table>
 
         <div class="section-header">
-            <h2>4. Class Distribution & Risk Metrics</h2>
-            <p>Visualizing the spread of returns, stop-loss efficacy, and Sharpe ratios across all submitted trades.</p>
+            <h2>4. Leaderboards: Top 5 Teams & Trades</h2>
         </div>
-        <div class="img-container">
-            <img src="class_performance_dashboard.png" alt="Class Returns & Risk/Reward Dashboard">
-        </div>
+        <div class="img-container"><img src="top_5_leaderboards.png" alt="Top 5 Leaderboards"></div>
 
         <div class="section-header">
-            <h2>5. Intra-Class Correlation Matrix</h2>
-            <p>Identifying "crowded trades" and clustering behavior among independent student teams.</p>
+            <h2>5. Class Distribution & Risk Metrics</h2>
         </div>
-        <div class="img-container">
-            <img src="correlation_heatmap.png" alt="Correlation Matrix">
-        </div>
+        <div class="img-container"><img src="class_performance_dashboard.png" alt="Risk Metrics"></div>
 
         <div class="section-header">
-            <h2>6. Aggregate Team Portfolios by Section</h2>
-            <p>Tracking the daily cumulative returns of each team's equally-weighted macro portfolio.</p>
+            <h2>6. Intra-Class Correlation Matrix</h2>
         </div>
-        <div class="img-container">
-            <img src="team_portfolios_by_section.png" alt="Team Portfolios Performance">
-        </div>
+        <div class="img-container"><img src="correlation_heatmap.png" alt="Correlation Matrix"></div>
 
-        <div class="section-header">
-            <h2>7. MBA Section: Individual Trade Breakdowns</h2>
-            <p>Decomposing each MBA team's aggregate portfolio into its individual trade components.</p>
-        </div>
-        <div class="img-container">
-            <img src="mba_teams_individual_trades.png" alt="MBA Individual Trades">
-        </div>
-
-        <div class="section-header">
-            <h2>8. EMBA Section: Individual Trade Breakdowns</h2>
-            <p>Decomposing each EMBA team's aggregate portfolio into its individual trade components.</p>
-        </div>
-        <div class="img-container">
-            <img src="emba_teams_individual_trades.png" alt="EMBA Individual Trades">
-        </div>
-
-        <div class="footer">
-            <p>Generated via Python Quantitative Pipeline utilizing the Bloomberg API (xbbg & blpapi).</p>
+        <div style="text-align: center; margin-top: 60px; color: #7f8c8d; font-size: 0.9em;">
+            <p>Generated via Python Quantitative Pipeline utilizing the Bloomberg API.</p>
         </div>
     </div>
 </body>
