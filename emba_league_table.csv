@@ -1,7 +1,7 @@
 Rank,Team,Net Portfolio P&L (%),Ann. Volatility (%),Max Drawdown (%),Sharpe Ratio,Info Ratio,Win Rate (%)
-1,EMBA Kilo,82.52,38.77,-23.59,1.73,1.63,67.0
+1,EMBA Kilo,82.52,38.77,-23.59,1.73,1.62,67.0
 2,EMBA Delta,23.02,9.47,-5.21,2.22,1.47,50.0
-3,EMBA India,18.63,10.37,-7.55,1.69,0.88,100.0
+3,EMBA India,18.64,10.37,-7.55,1.69,0.88,100.0
 4,EMBA Foxtrot,10.78,14.44,-6.6,0.78,0.27,100.0
 5,EMBA Alfa,5.45,4.31,-3.17,1.24,-0.12,50.0
 6,EMBA Charlie,5.07,4.99,-3.69,1.01,-0.19,33.0
@@ -9,7 +9,7 @@ Rank,Team,Net Portfolio P&L (%),Ann. Volatility (%),Max Drawdown (%),Sharpe Rati
 8,EMBA Juliett,2.3,3.93,-2.54,0.59,-0.5,50.0
 9,EMBA November,1.27,0.89,-0.55,1.41,-0.73,50.0
 10,EMBA Oscar,0.72,1.43,-0.82,0.51,-0.72,0.0
-11,EMBA Lima,0.44,1.11,-1.19,0.4,-0.83,33.0
+11,EMBA Lima,0.44,1.11,-1.19,0.4,-0.84,33.0
 12,EMBA Golf,0.42,1.05,-0.59,0.4,-0.82,50.0
 13,EMBA Bravo,0.08,2.12,-2.3,0.05,-1.11,50.0
 14,EMBA Hotel,-3.93,2.99,-5.1,-1.32,-1.36,0.0
